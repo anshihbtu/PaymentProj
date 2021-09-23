@@ -1,0 +1,177 @@
+<div class="proj">
+<h1 >PAYMENT GATEWAY  </h1>
+
+<br>
+
+
+
+<br>
+
+<form [formGroup]="num" (ngSubmit)="saveId()">
+  
+  <div class="form-group">
+  <td>Date 
+    <input formControlName="date" matInput [matDatepicker]="picker" [matDatepickerFilter]="weekendsDatesFilter">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker ></mat-datepicker>
+  </td>
+      <tr></tr>
+      <br>
+    <td>CustomerId 
+    
+      <input formControlName="customerId">
+    
+
+      <button>Search</button>
+    </td>
+  </div>
+</form>
+<br>
+<form [formGroup]="custForm">
+  <div class="form-group">
+
+
+    <table>
+      <tr>
+        <td>Name</td>
+        <td>
+          <input formControlName="name">
+
+        </td>
+      </tr>
+      <br>
+      <tr>
+        <td>Balance</td>
+        <td>
+          <input formControlName="balance">
+
+        </td>
+      </tr>
+      <br>
+      <tr>
+        <td>Overdraft</td>
+        <td>
+          <input formControlName="overdraft">
+
+        </td>
+      </tr>
+    </table>
+  </div>
+</form>
+<br>
+<form [formGroup]="ban" (ngSubmit)="saveban()">
+  <div class="form-group">
+    <label>Bic</label>
+    <input formControlName="bic">
+    
+    <button>Search</button>
+  </div>
+</form>
+<br>
+<form [formGroup]="banForm">
+  <div class="form-group">
+    <table>
+      <td>Institution Name</td>
+      <td>
+        <input formControlName="name">
+      </td>
+    </table>
+  </div>
+</form>
+<br>
+
+<form [formGroup]="thirdForm">
+  <div class="form-group">
+    <br>
+
+    <table>
+      <td>Receiver Account Holder Name</td>
+      <td>
+        <input formControlName="receiver_name">
+        <button (click)="onCheck()">Check</button>
+
+        <br>
+      </td>
+      <br>
+      <tr>
+        <td>Receiver Account Number</td>
+        <td>
+          <input formControlName="pno">
+
+        </td>
+      </tr>
+      <br>
+      <tr>
+        <td>Tranfer Type </td>
+        <td>
+          <select formControlName="ttype" class="form-control">
+            <option>Customer</option>
+
+            <option>Bank Transfer</option>
+
+          </select>
+        </td>
+      </tr>
+      <br>
+      <tr>
+        <td>Message Code </td>
+        <td>
+          <select formControlName="mcode" class="form-control">
+            <option>CORT</option>
+            <option>CHQB</option>
+            <option>HOLD</option>
+            <option>INTC</option>
+            <option>PHOB</option>
+            <option>PHOI</option>
+            <option>PHON</option>
+            <option>REPA</option>
+            <option>SDVA</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </div>
+</form>
+
+<br>
+
+<form [formGroup]="calc" (ngSubmit)="cal()">
+  <div class="form-group">
+    <td> Transfer Amount
+    <td>
+      <input formControlName="tamt">
+      <button>Calculate</button>
+  </div>
+</form>
+<br>
+
+<form [formGroup]="fForm">
+  <div class="form-group">
+
+
+    <table>
+      <tr>
+        <td>Transfer Fee</td>
+        <td>
+          <input formControlName="tf">
+
+        </td>
+      </tr>
+      <br>
+      <tr>
+        
+        <td>Clear Balance</td>
+        <td>
+          <input formControlName="cb">
+
+        </td>
+      </tr>
+      <br>
+      <button (click)="onSubmit()">Submit</button>
+
+    </table>
+  </div>
+</form>
+<br>
+
+</div>
